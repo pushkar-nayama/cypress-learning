@@ -8,7 +8,7 @@
     "cy:run": "npx cypress run",
     "group1": "npm run cy:run -- --spec cypress/integration/examples/group1/*",
     "tests": "npm run clean:folders && npm run cy:run && npm run allure:report",
-    "jenkins:tests": "npm run clean:folders && npm run group1",
+    "jenkins:tests": "npm run group1",
     "docker:tests": "npm run clean:folders && npm run group1 && npm run allure:report",
     "allure:report:open": "allure generate allure-results --clean -o allure-report && allure open allure-report",
     "allure:report": "allure generate allure-results --clean -o allure-report"
