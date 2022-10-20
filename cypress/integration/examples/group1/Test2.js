@@ -1,6 +1,6 @@
-describe("My First Test Suite", function () {
+describe("My Second Test Suite", function () {
   //Test Cases
-  it("My First Test Case", function () {
+  it("My Second Test Case", function () {
     cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/");
 
     cy.get("input.search-keyword").type("ca");
