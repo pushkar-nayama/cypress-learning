@@ -3,4 +3,4 @@ allure-results
 cypress/downloads
 cypress/screenshots
 cypress/videos
-node_modules/
+node_modules
