@@ -11,7 +11,8 @@
     "jenkins:tests": "npm run group1",
     "docker:tests": "npm run clean:folders && npm run group1 && npm run allure:report",
     "allure:report:open": "allure generate allure-results --clean -o allure-report && allure open allure-report",
-    "allure:report": "allure generate allure-results --clean -o allure-report"
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "test:electron": "npm run clean:folders && npm run group1 -- --browser electron --headed && npm run allure:report"
   },
   "author": "",
   "license": "ISC",

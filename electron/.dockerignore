@@ -1,0 +1,10 @@
+allure-report/
+allure-results/
+cypress/downloads/
+cypress/screenshots/
+cypress/videos/
+node_modules/
+reports/
+.git/
+chrome/allure-report
+firefox/allure-report

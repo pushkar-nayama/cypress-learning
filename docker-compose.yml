@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  chromium:
+    build: ./chromium
+    container_name: cypress_chromium
+    volumes:
+      - ./chromium/allure-report/:/cypress-automation/allure-report/
+
+  electron:
+    build: ./electron
+    container_name: cypress_electron
+    volumes:
+      - ./electron/allure-report/:/cypress-automation/allure-report/

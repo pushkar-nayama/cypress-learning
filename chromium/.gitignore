@@ -5,4 +5,6 @@ cypress/screenshots
 cypress/videos
 node_modules/
 reports/
+chrome/allure-report
+firefox/allure-report
 .git/
