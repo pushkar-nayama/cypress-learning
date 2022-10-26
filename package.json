@@ -13,7 +13,7 @@
     "allure:report:open": "allure generate allure-results --clean -o allure-report && allure open allure-report",
     "allure:report": "allure generate allure-results --clean -o allure-report"
   },
-  "author": "",
+  "author": "Pushkar Nayama",
   "license": "ISC",
   "devDependencies": {
     "allure-commandline": "^2.18.1",
