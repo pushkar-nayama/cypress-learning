@@ -16,7 +16,7 @@ jobs:
         with:
           # Disable running of tests within install job
           runTests: false
-          build: yarn build
+          build: npm run build
 
       - name: Save build folder
         uses: actions/upload-artifact@v2
@@ -45,4 +45,4 @@ jobs:
         with:
           # Specify Browser since container image is compile with Firefox
           browser: firefox
-          build: yarn build
+          build: npm run build
