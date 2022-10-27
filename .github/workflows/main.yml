@@ -2,31 +2,31 @@ name: Cypress Parallel Tests using Cypress Docker
 on: [push]
 
 jobs:
-  # install:
-  #   runs-on: ubuntu-latest
-  #   container: cypress/browsers:node16.17.1-chrome106-ff105-edge
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
+  install:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node16.17.1-chrome106-ff105-edge
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-  #       # Install NPM dependencies, cache them correctly
-  #       # and run all Cypress tests
-  #     - name: Cypress Install
-  #       uses: cypress-io/github-action@v4.2.0 # use the explicit version number
-  #       with:
-  #         # Disable running of tests within install job
-  #         runTests: false
+        # Install NPM dependencies, cache them correctly
+        # and run all Cypress tests
+      - name: Cypress Install
+        uses: cypress-io/github-action@v4.2.0 # use the explicit version number
+        with:
+          # Disable running of tests within install job
+          runTests: false
 
-  #     - name: Save build folder
-  #       uses: actions/upload-artifact@v2
-  #       with:
-  #         name: build-artifact
-  #         if-no-files-found: error
-  #         path: .
+      - name: Save build folder
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifact
+          if-no-files-found: error
+          path: .
   cypress-run:
     runs-on: ubuntu-latest
     container: cypress/browsers:node16.17.1-chrome106-ff105-edge
-    #needs: install
+    needs: install
     steps:
       - name: Checkout
         uses: actions/checkout@v2
