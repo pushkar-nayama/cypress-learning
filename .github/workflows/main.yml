@@ -12,11 +12,11 @@ jobs:
         # Install NPM dependencies, cache them correctly
         # and run all Cypress tests
       - name: Cypress Install
-        uses: cypress-io/github-action@v4.1.1 # use the explicit version number
+        uses: cypress-io/github-action@v4.0.0 # use the explicit version number
         with:
           # we have already installed all dependencies above
           start: npm run cy:run
-          browser: electron
+          #browser: electron
           record: true
           parallel: false
           group: "UI - Chrome"
