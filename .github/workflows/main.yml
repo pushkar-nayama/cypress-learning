@@ -1,9 +1,8 @@
-name: Cypress Parallel Tests using Cypress Docker
+name: Cypress Tests Execution
 on: [push]
-
 jobs:
   install:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     #container: cypress/browsers:node16.17.1-chrome106-ff105-edge
     steps:
       - name: Checkout
@@ -16,11 +15,10 @@ jobs:
         with:
           # we have already installed all dependencies above
           start: npm run cy:run
-          #browser: electron
-          record: true
+          browser: chrome
+          record: false
           parallel: false
           group: "UI - Chrome"
-          config-file: cypress.config.js
         env:
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
