@@ -3,8 +3,8 @@ on: [push]
 
 jobs:
   install:
-    runs-on: ubuntu-latest
-    container: cypress/browsers:node16.17.1-chrome106-ff105-edge
+    runs-on: windows-latest
+    #container: cypress/browsers:node16.17.1-chrome106-ff105-edge
     steps:
       - name: Checkout
         uses: actions/checkout@v2
