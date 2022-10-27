@@ -16,7 +16,7 @@ jobs:
         with:
           # Disable running of tests within install job
           runTests: false
-          build: npm run build
+          build: npm install
 
       - name: Save build folder
         uses: actions/upload-artifact@v2
@@ -24,25 +24,3 @@ jobs:
           name: build
           if-no-files-found: error
           path: build
-
-  cypress-run:
-    runs-on: ubuntu-latest
-    container: cypress/browsers:node16.17.1-chrome106-ff105-edge
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Download the build folders
-        uses: actions/download-artifact@v2
-        with:
-          name: build
-          path: build
-
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v4.2.0 # use the explicit version number
-        with:
-          # Specify Browser since container image is compile with Firefox
-          browser: firefox
-          build: npm run build
