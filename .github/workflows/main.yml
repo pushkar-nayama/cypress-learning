@@ -16,10 +16,7 @@ jobs:
         with:
           # Disable running of tests within install job
           runTests: false
-        # report machine parameters
-      - run: yarn cypress info
-      - run: node --version
-      - run: node -p 'os.cpus()'
+          build: npm run build
 
       - name: Save build folder
         uses: actions/upload-artifact@v2
