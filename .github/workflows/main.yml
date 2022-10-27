@@ -13,7 +13,13 @@ jobs:
         # and run all Cypress tests
       - name: Cypress Install
         uses: cypress-io/github-action@v4.2.0 # use the explicit version number
-
+        with:
+          # we have already installed all dependencies above
+          start: npm run cy:run
+          browser: chrome
+          record: true
+          parallel: false
+          group: "UI - Chrome"
         env:
           CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
