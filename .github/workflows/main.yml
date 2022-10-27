@@ -9,13 +9,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Save build folder
-        uses: actions/upload-artifact@v2
-        with:
-          name: build
-          if-no-files-found: error
-          path: build
-
         # Install NPM dependencies, cache them correctly
         # and run all Cypress tests
       - name: Cypress Install
@@ -24,6 +17,13 @@ jobs:
           # Disable running of tests within install job
           runTests: false
           build: yarn build
+
+      - name: Save build folder
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          if-no-files-found: error
+          path: build
 
   cypress-run:
     runs-on: ubuntu-latest
