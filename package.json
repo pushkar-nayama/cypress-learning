@@ -1,7 +1,7 @@
 {
   "name": "automation",
   "version": "1.0.0",
-  "description": "",
+  "description": "package.json",
   "main": "index.js",
   "scripts": {
     "clean:folders": "rm -R -f allure-report/* && rm -R -f allure-results/*",
