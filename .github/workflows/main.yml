@@ -16,11 +16,11 @@ jobs:
 
         # Install NPM dependencies, cache them correctly
         # and run all Cypress tests
-      - name: Cypress Install
+      - name: Cypress Run
         uses: cypress-io/github-action@v4.2.0 # use the explicit version number
         with:
           # we have already installed all dependencies above
-          start: npm run group1
+          spec: cypress/integration/examples/group1/*
           browser: chrome
           record: true
           group: "UI - Chrome"
