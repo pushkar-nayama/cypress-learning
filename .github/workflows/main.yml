@@ -1,7 +1,7 @@
 name: Cypress Tests Execution
 on: [push]
 jobs:
-  Chrome-Execution:
+  Cypress-Execution:
     runs-on: ubuntu-latest
     #container: cypress/browsers:node16.17.1-chrome106-ff105-edge
     strategy:
