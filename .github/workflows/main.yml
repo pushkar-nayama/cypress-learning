@@ -11,12 +11,12 @@ jobs:
       # https://github.com/cypress-io/github-action/issues/48
       fail-fast: false
     steps:
-      - name: Checkout
+      - name: Checkout-From-GitHub
         uses: actions/checkout@v2
 
         # Install NPM dependencies, cache them correctly
         # and run all Cypress tests
-      - name: Cypress Run
+      - name: Cypress-Run
         uses: cypress-io/github-action@v4.2.0 # use the explicit version number
         with:
           # we have already installed all dependencies above
