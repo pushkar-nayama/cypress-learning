@@ -1,0 +1,29 @@
+name: Cypress Tests Execution
+on: [pull_request]
+jobs:
+  Cypress-Execution:
+    runs-on: ubuntu-latest
+    #container: cypress/browsers:node16.17.1-chrome106-ff105-edge
+    strategy:
+      # when one test fails, DO NOT cancel the other
+      # containers, because this will kill Cypress processes
+      # leaving the Dashboard hanging ...
+      # https://github.com/cypress-io/github-action/issues/48
+      fail-fast: false
+    steps:
+      - name: Checkout-From-GitHub
+        uses: actions/checkout@v2
+
+        # Install NPM dependencies, cache them correctly
+        # and run all Cypress tests
+      - name: Cypress-Run
+        uses: cypress-io/github-action@v4.2.0 # use the explicit version number
+        with:
+          # we have already installed all dependencies above
+          spec: cypress/integration/examples/group1/*
+          browser: chrome
+          record: true
+          group: "UI - Chrome"
+        env:
+          CYPRESS_PROJECT_ID: ${{ secrets.CYPRESS_PROJECT_ID }}
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

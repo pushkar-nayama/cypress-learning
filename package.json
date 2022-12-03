@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "clean:folders": "rm -R -f allure-report/* && rm -R -f allure-results/*",
-    "cy:run": "npx cypress run",
-    "group1": "npm run cy:run -- --spec cypress/integration/examples/group1/*",
+    "cy:run": "npx cypress run --record",
+    "group1": "npx cypress run --record --spec cypress/integration/examples/group1/*",
     "tests": "npm run clean:folders && npm run cy:run && npm run allure:report",
     "jenkins:tests": "npm run group1",
     "docker:tests": "npm run clean:folders && npm run group1 && npm run allure:report",
